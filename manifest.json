@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Hedvig AdBlocker",
+    "description": "By popular demand, here's an AdBlock for all Hedvig´s ads.",
+    "version": "0.0.1",
+    "author": "Hedvig",
+    "content_scripts": [{
+        "matches": ["*://*.facebook.com/*", "*://*.facebookcorewwwi.onion/*"],
+        "js": ["src/js/main.js"],
+        "css": ["src/css/content.css"],
+        "run_at": "document_idle"
+    }],
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "web_accessible_resources": [
+        "src/js/*"
+    ],
+    "content_security_policy": "default-src 'self'"
+}
