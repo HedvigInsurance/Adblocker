@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Hedvig AdBlocker",
     "description": "By popular demand, here's an AdBlock for all Hedvig´s ads.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Hedvig",
     "content_scripts": [{
         "matches": ["*://*.facebook.com/*", "*://*.facebookcorewwwi.onion/*"],
