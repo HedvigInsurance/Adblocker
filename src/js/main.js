@@ -391,20 +391,6 @@ function isFB5() {
 }
 
 
-/**
- * Init function, calls observers based on clients Facebook version
- */
-window.onload = () => {
-  if (isClassicFacebook()) {
-    // Old Facebook design
-    console.log('Inits Hedvig AdBlocker extension for old Facebook')
-    setupPageObserverForOldFacebook();
-  } else if (isFB5()) {
-    // if it's FB5 design
-    console.log('Inits Hedvig AdBlocker extension for new Facebook')
-    setupPageObserverForNewFacebook();
-  }
-}
 
 // Cleanup after unload
 window.addEventListener("beforeunload", () => {
@@ -424,3 +410,16 @@ window.addEventListener("beforeunload", () => {
     }
   }
 });
+
+/**
+ * Calls observers based on clients Facebook version
+ */
+if (isClassicFacebook()) {
+  // Old Facebook design
+  console.log('Inits Hedvig AdBlocker extension for old Facebook')
+  setupPageObserverForOldFacebook();
+} else if (isFB5()) {
+  // if it's FB5 design
+  console.log('Inits Hedvig AdBlocker extension for new Facebook')
+  setupPageObserverForNewFacebook();
+}
